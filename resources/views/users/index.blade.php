@@ -42,18 +42,7 @@
                     "<'row'<'col-sm-12'tr>>" +
                     "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
                 buttons: [
-                    // {
-                    //     extend: 'csvHtml5',
-                    //     text: 'CSV',
-                    //     titleAttr: 'Generate CSV',
-                    //     className: 'btn-outline-default'
-                    // },
-                    // {
-                    //     extend: 'print',
-                    //     text: 'Print Members',
-                    //     titleAttr: 'Print Table',
-                    //     className: 'btn-outline-default'
-                    // }
+
 
                 ]
             });
@@ -92,6 +81,21 @@
     </script>
 @endpush
 @section('content')
+<!-- start  -->
+<div class="row">
+    <div class="col-12">
+        <div>
+            <h4 class="header-title mb-3">User</h4>
+        </div>
+        <div class="them" style="text-align: right;">
+           
+            <a href="{!! route('users.create') !!}" class="btn btn-xl text-white btn-primary waves-effect" role="button" title="New User">
+                <i class=""></i>Create New User
+            </a>
+        </div>
+    </div>
+</div>
+<!-- end row -->
     <div id="panel-1" class="panel">
         <div class="panel-hdr">
             <h2>All User</h2>
@@ -124,10 +128,9 @@
                             </td>
                             <td class="text-center">{!! date_from_database($user->created_at) !!}</td>
                             <td class="data-controls text-center">
-                                <a href="{!! route('users.edit',$user->id)!!}"
-                                   class="data-edit btn btn-sm btn-icon btn-outline-danger rounded-circle mr-1"
-                                   title="Edit">
-                                    <i class="fal fa-pencil"></i>
+                                <a  class="btn btn-default btn-sm btn-icon btn-outline-danger rounded-circle mr-1" 
+                                    href="{!! route('users.edit',$user->id)!!}" role="button" title="Edit">
+                                    <i class="mdi mdi-border-color" aria-hidden="true"></i>
                                 </a>
                                 {{-- <a href="{!! route('users.destroy',$user->id)!!}"
                                    data-token="{!! csrf_token()!!}"

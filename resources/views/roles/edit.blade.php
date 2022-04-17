@@ -125,6 +125,15 @@
     </script>
 @stop
 @section('content')
+    <!-- start  -->
+    <div class="row">
+        <div class="col-12">
+            <div>
+                <h4 class="header-title mb-3">Role</h4>
+            </div>
+        </div>
+    </div>
+    <!-- end row -->
     @includeIf('elements.errors.danger')
     {!! Form::model($role,[
         'id'     => 'fRoles',
@@ -285,17 +294,11 @@
                     </div>
                     <div class="col-xl-6">
                         <div class="group-action float-right">
-                            {!! Form::button('<i class="fal fa-save fa-fw"></i> Save',[
+                            {!! Form::button('<i class=""></i> Save',[
                                 'type'  =>  'submit',
                                 'name'  =>  'submit',
                                 'value' =>  'save',
                                 'class' =>  'btn btn-success waves-effect waves-themed'
-                            ]) !!}
-                            {!! Form::button('<i class="fal fa-save fa-fw"></i> Save & Edit',[
-                                'type'  =>  'submit',
-                                'name'  =>  'submit',
-                                'value' =>  'apply',
-                                'class' =>  'btn btn-success waves-themed'
                             ]) !!}
                         </div>
                     </div>

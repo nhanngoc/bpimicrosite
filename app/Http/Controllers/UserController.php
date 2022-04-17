@@ -56,15 +56,6 @@ class UserController extends Controller
         $roles = $this->roleRepository->getList([
             '' => 'Select role'
         ], []);
-
-        //Get company, department and user group
-        $companyCodeRepository = app(CompanyCodeInterface::class);
-        $companies = $companyCodeRepository->getList([
-            '' => 'Select Company'
-        ], []);
-        // dd($companies);
-        //$departments = Department::all()->pluck('name', 'id');
-        //$user_groups = UserGroup::all()->pluck('name', 'id');
         
         return view('users.create', compact('user', 'roles'));
     }
@@ -108,16 +99,7 @@ class UserController extends Controller
         $roles = $this->roleRepository->getList([
             '' => 'Select role'
         ], []);
-        //Get company, department and user group
-        //$companyCodeRepository = app(CompanyCodeInterface::class);
-        /* $companies = $companyCodeRepository->getList([
-            '' => 'Select Company'
-        ], []); */
-
-        //$company = CompanyCode::where(['code' =>$user->company_id])->first();
-        //$departments = ($company) ? $company->departments->pluck('name', 'id')->toArray() : [];
         
-        //$user_groups = UserGroup::all()->pluck('name', 'id')->toArray();
         return view('users.edit', compact('user', 'roles'));
     }
 

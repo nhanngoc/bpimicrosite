@@ -40,18 +40,7 @@
                     "<'row'<'col-sm-12'tr>>" +
                     "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
                 buttons: [
-                    // {
-                    //     extend: 'csvHtml5',
-                    //     text: 'CSV',
-                    //     titleAttr: 'Generate CSV',
-                    //     className: 'btn-outline-default'
-                    // },
-                    // {
-                    //     extend: 'print',
-                    //     text: 'Print',
-                    //     titleAttr: 'Print Table',
-                    //     className: 'btn-outline-default'
-                    // }
+                    
 
                 ]
             });
@@ -60,6 +49,21 @@
     <script type="text/javascript" src="{!! asset('templates/admin/pages/roles.js?v='.time()) !!}"></script>
 @endpush
 @section('content')
+    <!-- start  -->
+    <div class="row">
+        <div class="col-12">
+            <div>
+                <h4 class="header-title mb-3">Role</h4>
+            </div>
+            <div class="them" style="text-align: right;">
+            
+                <a href="{!! route('roles.create') !!}" class="btn btn-xl text-white btn-primary waves-effect" role="button" title="New Roles">
+                    <i class=""></i>Create New Role
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- end row -->
     <div class="row">
         <div class="col-xl-12">
             <div id="panel-1" class="panel">
@@ -91,20 +95,18 @@
                                     <td>{!! $role->description !!}</td>
                                     <td>{!! date_from_database($role->created_at) !!}</td>
                                     <td>{!! date_from_database($role->created_at) !!}</td>
-                                    <td class="data-controls text-right">
+                                    <td class="text-right">
                                         {{-- @if(Auth::user()->hasPermission('roles.destroy'))
-                                            <a href="{!! route('roles.destroy',$role->id)!!}"
-                                               data-token="{!! csrf_token() !!}"
-                                               class="data-delete btn btn-sm btn-icon btn-outline-danger rounded-circle mr-1"
-                                               title="Delete"><i
-                                                    class="fal fa-times"></i>
+                                            <a  data-token="{!! csrf_token() !!}"
+                                                class="btn btn-danger btn-sm " 
+                                                href="{!! route('roles.destroy',$role->id)!!}" role="button" title="Delete">
+                                                <i class="mdi mdi-border-color" aria-hidden="true"></i>
                                             </a>
                                         @endif --}}
                                         @if(Auth::user()->hasPermission('roles.edit'))
-                                            <a href="{!! route('roles.edit',$role->id)!!}"
-                                               class="data-edit btn btn-sm btn-icon btn-outline-danger rounded-circle mr-1"
-                                               title="Edit">
-                                                <i class="fal fa-pencil"></i>
+                                            <a  class="btn btn-default btn-sm btn-icon btn-outline-danger rounded-circle mr-1" 
+                                                href="{!! route('roles.edit',$role->id)!!}" role="button" title="Edit">
+                                                <i class="mdi mdi-border-color" aria-hidden="true"></i>
                                             </a>
                                         @endif
                                     </td>
